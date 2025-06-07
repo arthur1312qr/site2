@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Continue para a próxima etapa</title>
 
-  <!-- Meta tag do Google AdSense -->
   <meta name="google-adsense-account" content="ca-pub-7240870718266726">
-
-  <!-- Script do Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7240870718266726"
           crossorigin="anonymous"></script>
 
@@ -17,19 +14,8 @@
       font-family: sans-serif;
       text-align: center;
       padding: 40px;
-      margin: 0;
       background-color: #f9f9f9;
-    }
-
-    h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    p {
-      font-size: 1.1em;
-      margin-bottom: 30px;
+      margin: 0;
     }
 
     button {
@@ -40,7 +26,7 @@
       background-color: #007BFF;
       color: white;
       cursor: pointer;
-      margin: 10px 0;
+      margin: 10px auto;
       width: 100%;
       max-width: 300px;
     }
@@ -50,27 +36,24 @@
     }
 
     #botaoFinal {
-      display: none;
       background-color: #28a745;
+      display: none;
     }
 
     #botaoFinal:hover {
       background-color: #1e7e34;
     }
 
+    #aviso-adblock {
+      display: none;
+      padding: 30px;
+      background: #fff3cd;
+      color: #856404;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
     @media (max-width: 600px) {
-      body {
-        padding: 20px;
-      }
-
-      h2 {
-        font-size: 1.5em;
-      }
-
-      p {
-        font-size: 1em;
-      }
-
       button {
         font-size: 1em;
       }
@@ -82,30 +65,44 @@
       document.getElementById('botaoProximo').style.display = 'none';
       document.getElementById('botaoFinal').style.display = 'block';
     }
+
+    function detectarAdblock() {
+      const bait = document.createElement('div');
+      bait.className = 'adsbox';
+      bait.style.height = '1px';
+      document.body.appendChild(bait);
+
+      setTimeout(() => {
+        if (bait.offsetHeight === 0) {
+          document.getElementById("conteudo").style.display = "none";
+          document.getElementById("aviso-adblock").style.display = "block";
+        }
+        document.body.removeChild(bait);
+      }, 100);
+    }
+
+    window.onload = detectarAdblock;
   </script>
 </head>
 <body>
-  <h2>Estamos quase lá!</h2>
-  <p>Leia as informações abaixo antes de prosseguir:</p>
+  <div id="conteudo">
+    <h2>Estamos quase lá!</h2>
+    <p>Leia as informações abaixo antes de prosseguir:</p>
 
-  <!-- Área para anúncios -->
-  <div id="ads">
-    <!-- Anúncio automático do Google AdSense -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <div id="ads">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <br>
+    <button id="botaoProximo" onclick="mostrarBotaoFinal()">Próximo</button>
+    <button id="botaoFinal" onclick="window.location.href='https://pay.cakto.com.br/tvd2vce_421399'">Ir para o conteúdo final</button>
   </div>
 
-  <br>
-
-  <button id="botaoProximo" onclick="mostrarBotaoFinal()">Próximo</button>
-  <br>
-  <button id="botaoFinal" onclick="window.location.href='https://pay.cakto.com.br/tvd2vce_421399'">
-    Ir para o conteúdo final
-  </button>
+  <div id="aviso-adblock">
+    <h3>🚫 AdBlock Detectado</h3>
+    <p>Por favor, desative seu bloqueador de anúncios para continuar.</p>
+    <button onclick="location.reload()">Já desativei, recarregar</button>
+  </div>
 </body>
 </html>
