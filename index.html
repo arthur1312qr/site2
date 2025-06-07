@@ -79,6 +79,7 @@
 
   <script>
     function mostrarBotaoFinal() {
+      document.getElementById('botaoProximo').style.display = 'none';
       document.getElementById('botaoFinal').style.display = 'block';
     }
   </script>
@@ -101,7 +102,7 @@
 
   <br>
 
-  <button onclick="mostrarBotaoFinal()">Próximo</button>
+  <button id="botaoProximo" onclick="mostrarBotaoFinal()">Próximo</button>
   <br>
   <button id="botaoFinal" onclick="window.location.href='https://pay.cakto.com.br/tvd2vce_421399'">
     Ir para o conteúdo final
