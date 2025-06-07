@@ -1,27 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Continue para a próxima etapa</title>
+
+  <!-- Meta tag do Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-7240870718266726">
+
+  <!-- Script do Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7240870718266726"
+          crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #botaoFinal {
+      display: none;
+      background-color: #28a745;
+    }
+
+    #botaoFinal:hover {
+      background-color: #1e7e34;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      button {
+        font-size: 1em;
+      }
+    }
+  </style>
+
   <script>
     function mostrarBotaoFinal() {
       document.getElementById('botaoFinal').style.display = 'block';
     }
   </script>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding: 40px;">
+<body>
   <h2>Estamos quase lá!</h2>
   <p>Leia as informações abaixo antes de prosseguir:</p>
 
   <!-- Área para anúncios -->
   <div id="ads">
-    <!-- Aqui você pode colar o código de anúncio (como PropellerAds, Adsterra, etc.) -->
+    <!-- Anúncio automático do Google AdSense -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
 
-  <br><br>
+  <br>
 
   <button onclick="mostrarBotaoFinal()">Próximo</button>
-  <br><br>
-  <button id="botaoFinal" style="display:none;" onclick="window.location.href='https://pay.cakto.com.br/tvd2vce_421399'">
+  <br>
+  <button id="botaoFinal" onclick="window.location.href='https://pay.cakto.com.br/tvd2vce_421399'">
     Ir para o conteúdo final
   </button>
 </body>
