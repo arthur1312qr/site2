@@ -3,106 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Continue para a próxima etapa</title>
-
-  <meta name="google-adsense-account" content="ca-pub-7240870718266726">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7240870718266726"
-          crossorigin="anonymous"></script>
-
+  <title>Ebook PowerStore</title>
   <style>
     body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 40px;
-      background-color: #f9f9f9;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #111, #222);
+      color: #fff;
     }
 
-    button {
-      padding: 12px 24px;
+    header {
+      background-color: #ff3c00;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 30px;
+      color: #ffcc00;
+    }
+
+    .ebook-button {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
       font-size: 1.2em;
-      border: none;
-      border-radius: 8px;
-      background-color: #007BFF;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff8800, #ff3c00);
       color: white;
-      cursor: pointer;
-      margin: 10px auto;
-      width: 100%;
-      max-width: 300px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    #botaoFinal {
-      background-color: #28a745;
-      display: none;
-    }
-
-    #botaoFinal:hover {
-      background-color: #1e7e34;
-    }
-
-    #aviso-adblock {
-      display: none;
-      padding: 30px;
-      background: #fff3cd;
-      color: #856404;
-      margin-top: 20px;
+      border: none;
       border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
     }
 
-    @media (max-width: 600px) {
-      button {
-        font-size: 1em;
-      }
+    .ebook-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ff8800;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #aaa;
     }
   </style>
-
-  <script>
-    function mostrarBotaoFinal() {
-      document.getElementById('botaoProximo').style.display = 'none';
-      document.getElementById('botaoFinal').style.display = 'block';
-    }
-
-    function detectarAdblock() {
-      const bait = document.createElement('div');
-      bait.className = 'adsbox';
-      bait.style.height = '1px';
-      document.body.appendChild(bait);
-
-      setTimeout(() => {
-        if (bait.offsetHeight === 0) {
-          document.getElementById("conteudo").style.display = "none";
-          document.getElementById("aviso-adblock").style.display = "block";
-        }
-        document.body.removeChild(bait);
-      }, 100);
-    }
-
-    window.onload = detectarAdblock;
-  </script>
 </head>
 <body>
-  <div id="conteudo">
-    <h2>Estamos quase lá!</h2>
-    <p>Leia as informações abaixo antes de prosseguir:</p>
 
-    <div id="ads">
-      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+  <header>
+    PowerStore de E-books 🔥
+  </header>
 
-    <br>
-    <button id="botaoProximo" onclick="mostrarBotaoFinal()">Próximo</button>
-    <button id="botaoFinal" onclick="window.location.href='https://pay.cakto.com.br/d33kb87_425104'">Ir para o conteúdo final</button>
-  </div>
+  <main>
+    <h2>Ebooks disponíveis</h2>
 
-  <div id="aviso-adblock">
-    <h3>🚫 AdBlock Detectado</h3>
-    <p>Por favor, desative seu bloqueador de anúncios para continuar.</p>
-    <button onclick="location.reload()">Já desativei, recarregar</button>
-  </div>
+    <a class="ebook-button" href="LINK_DO_EBOOK_1" target="_blank">
+      📘 Como Se Tornar Milionário em Casa: Métodos Mais Rápidos Possíveis
+    </a>
+
+    <a class="ebook-button" href="LINK_DO_EBOOK_2" target="_blank">
+      🥗 10 Receitas Low Carb Incríveis Para Secar a Barriga
+    </a>
+
+    <a class="ebook-button" href="LINK_DO_EBOOK_3" target="_blank">
+      🧠 Mente em Equilíbrio: Um Guia Prático de Saúde Mental e Autocuidado
+    </a>
+  </main>
+
+  <footer>
+    © 2025 PowerStore - Todos os direitos reservados.
+  </footer>
+
 </body>
 </html>
